@@ -1,1 +1,15 @@
-test
+input <- read.csv(file="hw1_data.csv",header=T)
+names(input)
+head(input,2)\
+nrow(input)
+tail(input,2)
+input[47,c("Ozone")]
+temp <- subset(input,is.na(Ozone))
+nrow(temp)
+temp <- subset(input,!is.na(Ozone))
+mean(temp$Ozone)
+temp <- subset(input,(Ozone > 31 & Temp > 90))
+mean(temp$Solar.R)
+temp <- subset(input,Month == 6)
+mean(temp$Temp)
+max(temp$Ozone,na.rm=T)
